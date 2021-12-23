@@ -4,4 +4,11 @@
 - 추시 / Vision / NLP
 
 
+# week 1 : OT
+- False Positive (X)
+- True Positivie (O)
+- Goal: 10k
+- slack & Notion
+- 10h per week
 
+# week 2
