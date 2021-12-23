@@ -7,7 +7,7 @@
 - False Positive (X)
 - True Positivie (O)
 - Goal: 10k
-- slack & Notion
+- Slack & Notion
 - 10h per week
 
 # week 2
