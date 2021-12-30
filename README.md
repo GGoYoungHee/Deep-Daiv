@@ -15,3 +15,4 @@
 # week 2
 - What is GA?
 - LaTeX Writing
+- 했던거 정리해서 코드도 올려야지!
