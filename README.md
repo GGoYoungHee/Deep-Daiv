@@ -11,3 +11,5 @@
 - 10h per week
 
 # week 2
+- What is GA?
+- Latex Writing
