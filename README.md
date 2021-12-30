@@ -12,4 +12,4 @@
 
 # week 2
 - What is GA?
-- Latex Writing
+- LaTeX Writing
