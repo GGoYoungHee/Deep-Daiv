@@ -15,5 +15,5 @@
 # week 2
 - What is GA?
 - LaTeX Writing
-- 했던거 정리해서 코드도 올려야지!
-- 팀 빌딩하기
+- Jekyll: Static Generator
+- 
