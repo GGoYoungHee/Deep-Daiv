@@ -3,6 +3,8 @@
 
 우헤헤ㅔ헤헤헤헤
 
+Xiang Zhang, Junbo Zhao, & Yann LeCun. (2016). Character-level Convolutional Networks for Text Classification.
+
 논문 정리는 마크다운으로 해야지!
 아 코드 상태 맘에 안들어
 다음부터는 colab에서 바로 push해야겠어
