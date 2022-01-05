@@ -7,10 +7,12 @@
 아 코드 상태 맘에 안들어
 다음부터는 colab에서 바로 push해야겠어
 
+아쉬운점은 pytorch로 구현하지 않고 keras로 구현했다는 점!
+pytorch에 
+
 TIL
 - OOV_ token
 - 오프셋 상수
-
 
 파라미터 계산
 
