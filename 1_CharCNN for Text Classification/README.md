@@ -36,3 +36,17 @@ $$h(y) = \max_{x=1}^{k} g(y \cdot d -x +c)$$ -(2)
 혹시 1번의 h(y)가 끝나고 다음과정에서 2번의 h(y)가 등장하는건가? 
 (Conv 끝내고 풀링하는것처럼, 근데 다른 과정인데 왜 기호를 똑같이 썼지??)
 이건 discussion해봐야겠다
+
+
+헷갈렸던 점 2
+- 논문 내 table 1. and model.summary() 결과 
+  - conv1 input dim: (None,1014,70)
+  - conv1 output dim: (None, 1008,256) cf.(batchsize, height,width,channels)에서 우리는 channels 무조건 1
+  - 여기서 conv를 했는데 width의 dim이 input보다 커지는 게 이해가 안되었음.
+  - 이걸 이해하기 위해서 커널의 dim까지 알고 있어야 하는데, 논문에서 커널 수가 7이라고 해서 나는 당연히 커널 dim이 (1,7)인줄 알았다. 하지만, 사실 커널 dim은 우리의 input dim 70 (알파벳+기호+숫자 수)과 관련이 있었다. 커널 dim은 (7\*70)이었고, (**conv1d라고 해서, 커널사이즈가 1d는 아니다!**)
+  - 여기서 256은 커널 개수였다. 즉, 다시 말하면 (7\*70) 커널을 256개를 넣는 다는 뜻. 그래서 width의 dim은 커질 수 밖에 없음
+  - 그리고, 커널 내 숫자들은 가중치가 항상 달라지기 때문에 (역전파 학습) feature map의 같은 열 끼리의 숫자는 항상 다르다!
+  - 참고한 영상 : https://www.youtube.com/watch?v=CNY8VjJt-iQ + 댓글들
+
+ ![image](https://user-images.githubusercontent.com/77769026/148919910-5c0cbdb7-9247-4b1a-8d48-68f47be5d581.png)
+
