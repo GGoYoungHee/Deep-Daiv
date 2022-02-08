@@ -21,7 +21,8 @@
 
 # week 3
 - [paper] Character-level CNN
-- CNN=Vision이라는 편견 깨기
+- https://arxiv.org/abs/1509.01626
+- CNN=Vision이라는 편견 깨기 
 - CNN을 NLP에 적용시키기 with code
 
 # week 4
@@ -47,6 +48,7 @@
 
 # week 7
 - [paper] Human-level control through deep reinforcement learning
+- https://www.nature.com/articles/nature14236
 
 
 
