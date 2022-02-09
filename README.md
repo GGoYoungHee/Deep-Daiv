@@ -44,7 +44,9 @@
 - [paper] Play Atari with deep reinforcement learning
 - https://arxiv.org/abs/1312.5602
 - RL with CNN
-- 즉 컴퓨터가 실제로 이미지 데이터를 보면서 스스로 학습해 게임 실행
+- 즉 컴퓨터가 실제로 이미지 데이터를 보면서 스스로 학습해 게임 실행 
+![Untitled](https://user-images.githubusercontent.com/77769026/153120158-d0bc5fe9-cbd0-4467-99ae-b6143f18ac16.png)
+
 
 # week 7
 - [paper] Human-level control through deep reinforcement learning
