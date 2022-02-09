@@ -44,8 +44,11 @@
 - [paper] Play Atari with deep reinforcement learning
 - https://arxiv.org/abs/1312.5602
 - RL with CNN
+- Deep Q Network
 - 즉 컴퓨터가 실제로 이미지 데이터를 보면서 스스로 학습해 게임 실행 
-![Untitled](https://user-images.githubusercontent.com/77769026/153120158-d0bc5fe9-cbd0-4467-99ae-b6143f18ac16.png)
+- Experience Replay memory
+- Input data: pixel -> CNN 사용
+
 
 
 # week 7
