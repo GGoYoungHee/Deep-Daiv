@@ -44,7 +44,7 @@
 - [paper] Play Atari with deep reinforcement learning
 - https://arxiv.org/abs/1312.5602
 - RL with CNN
-- Deep Q Network
+- Deep Q Network (DQN)
 - 즉 컴퓨터가 실제로 이미지 데이터를 보면서 스스로 학습해 게임 실행 
 - Experience Replay memory
 - Input data: pixel -> CNN 사용
@@ -54,7 +54,11 @@
 # week 7
 - [paper] Human-level control through deep reinforcement learning
 - https://www.nature.com/articles/nature14236
-
+- Week 6에서 읽은 Atari 게임이랑 강화학습이 비슷한 느낌이어서 찾아보니 같은 모델 DQN이었다.
+- 두 논문 모두 딥마인드에서 작성한 paper였고, 2013년의 DQN과 다른점은 다음과 같다. (DQN의 개정판이라고 생각했다)
+- 2013년의 DQN은 target vlaue 를 상수취급하여 학습 진행했지만, 2015년의 DQNdms target value를 네트워크로 구성해 performance를 향상시킴
+  - 이 과정에서 새로운 파라미터 theta^- 나타남
+  - 이터레이션 C 시간동안 Q_hat과 Q를 동일하게 취급함
 
 
 
