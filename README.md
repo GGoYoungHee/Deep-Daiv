@@ -61,4 +61,9 @@
   - 이터레이션 C 시간동안 Q_hat과 Q를 동일하게 취급함
 
 
+# week 8
+- [paper] GNNExplainer - Generating Explanations for Grapha Neural Networks
+- GNN(Graph Neural Network) + XAI (Explainable AI)
+
+
 
