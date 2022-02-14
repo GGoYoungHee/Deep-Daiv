@@ -63,6 +63,7 @@
 
 # week 8
 - [paper] GNNExplainer - Generating Explanations for Grapha Neural Networks
+- https://arxiv.org/abs/1903.03894
 - GNN(Graph Neural Network) + XAI (Explainable AI)
 
 
