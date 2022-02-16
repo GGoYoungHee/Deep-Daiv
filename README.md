@@ -24,6 +24,7 @@
 - https://arxiv.org/abs/1509.01626
 - CNN=Vision이라는 편견 깨기 
 - CNN을 NLP에 적용시키기 with code
+- [paper] & [code]
 
 # week 4
 - [paper] Going Deeper with Convolutions
@@ -34,6 +35,7 @@
 - 코드도 돌려봤지만, 이전 CNN 공부 방향과는 다르게 '코드 구현'을 집중적으로 하지 않고 Architecture에 집중하며, Parameter에 집중함.
 - 1\*1 Conv layer
 - Inception
+- [paper] & [code]
 
 # week 5
 - Reinforcement Learning foundation
@@ -65,6 +67,11 @@
 - [paper] GNNExplainer - Generating Explanations for Grapha Neural Networks
 - https://arxiv.org/abs/1903.03894
 - GNN(Graph Neural Network) + XAI (Explainable AI)
+- GNN의 가장 중요한 점 : '관계'정보 -> 대부분의 XAI 방법론은 관계정보를 포함시키지 않음
+- 따라서 본 논문에서는 Subgraph 와 Node Feature 을 추출하는 기법을 특징으로 볼 수 있음
 
-
+# week 9
+- Week 8에 이어서 GNNExplainer 논문리뷰 및 코드 리뷰 (예정)
+- GNN 코드 ref : https://github.com/pyg-team/pytorch_geometric
+- 
 
