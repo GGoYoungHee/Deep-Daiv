@@ -42,6 +42,7 @@
 - Reinforcement Learning foundation
 - not paper
 - 통계학의 시선으로 강화학습 바라보기
+- youtube lectures : chapter 1 ~ chapter 4
 
 # week 6
 - [paper] Play Atari with deep reinforcement learning
@@ -53,7 +54,6 @@
 - Input data: pixel -> CNN 사용
 
 
-
 # week 7
 - [paper] Human-level control through deep reinforcement learning
 - https://www.nature.com/articles/nature14236
@@ -62,7 +62,7 @@
 - 2013년의 DQN은 target vlaue 를 상수취급하여 학습 진행했지만, 2015년의 DQNdms target value를 네트워크로 구성해 performance를 향상시킴
   - 이 과정에서 새로운 파라미터 theta^- 나타남
   - 이터레이션 C 시간동안 Q_hat과 Q를 동일하게 취급함
-
+ 
 
 # week 8
 - [paper] GNNExplainer - Generating Explanations for Grapha Neural Networks
@@ -71,8 +71,12 @@
 - GNN의 가장 중요한 점 : '관계'정보 -> 대부분의 XAI 방법론은 관계정보를 포함시키지 않음
 - 따라서 본 논문에서는 Subgraph 와 Node Feature 을 추출하는 기법을 특징으로 볼 수 있음
 
-# week 9
+# week 9 ~ week 10
+- Write a article about projects
+- First draft
+*- 와 너무 힘드러 차라리 논문 읽을래...*
+
+# week 11
 - Week 8에 이어서 GNNExplainer 논문리뷰 및 코드 리뷰 (예정)
 - GNN 코드 ref : https://github.com/pyg-team/pytorch_geometric
-- 
 
