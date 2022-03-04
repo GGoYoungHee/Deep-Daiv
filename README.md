@@ -74,7 +74,7 @@
 # week 9 ~ week 10
 - Write a article about projects
 - First draft
-*- 와 너무 힘드러 차라리 논문 읽을래...*
+- *와 너무 힘드러 차라리 논문 읽을래...*
 
 # week 11
 - Week 8에 이어서 GNNExplainer 논문리뷰 및 코드 리뷰 (예정)
