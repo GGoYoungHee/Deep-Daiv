@@ -77,6 +77,8 @@
 - *와 너무 힘드러 차라리 논문 읽을래...*
 
 # week 11
-- Week 8에 이어서 GNNExplainer 논문리뷰 및 코드 리뷰 (예정)
+- Week 8에 이어서 GNNExplainer 논문리뷰 및 코드 리뷰
 - GNN 코드 ref : https://github.com/pyg-team/pytorch_geometric
+- Mutual Information 최대화하는 것이 본 논문의 핵심
+  - 관련 내용을 수식으로 derivation 
 
