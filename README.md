@@ -82,3 +82,9 @@
 - Mutual Information 최대화하는 것이 본 논문의 핵심
   - 관련 내용을 수식으로 derivation 
 
+# week 12
+- CNN + GNN = GCN 기초 개념 정리 
+- GNN first paper 일고 싶었는데 엄두가 안나서 그나마 아는 CNN 과 결합된 논문을 선택했는데 무엇인가 잘못되었다. 
+- 이거 어려워서 2주로 늘리고 week12는 기초 개념들 정리함
+
+
