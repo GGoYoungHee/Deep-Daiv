@@ -84,9 +84,20 @@
 
 # week 12
 - CNN + GNN = GCN 기초 개념 정리 
-- GNN first paper 읽고 싶었는데 엄두가 안나서 그나마 아는 CNN 과 결합된 논문을 선택했는데 무엇인가 잘못되었다. 
+- GNN first paper 읽고 싶었는데 엄두가 안나서 그나마 아는 CNN 과 결합된 논문을 선택했는데 GNN에 대한 이해없이 읽기 시작하니까 시간이 오래 걸렸다.
 - 생각보다 어렵고 challenge한 분야였다~~
-- 신호처리 분야 뭐야....?? 나 전자 공학과 아닌데,,,
 - 이거 어려워서 2주로 늘리고 week12는 기초 개념들 정리함
 
+# Week 13
+- [paper] Convolutional Neural Networks on Graphs with Fast Localized Spectral Filtering
+- https://arxiv.org/abs/1606.09375
+- Graph는 다른 데이터에 비해 유클리디안 공간에서 정의되지 않는다. 따라서 이 논문에서는 그래프에 CNN을 적용시키기 위해 다음과 같은 두가지 방법을 제안한다.
+  1. 그래프의 신호 (Non-Euclidean에서 정의됨)를 유클리디안 공간으로 변환
+    - 그래프의 라플라시안 행렬을 푸리에 급수에 따라 고유값 분해 
+    - 그래프 행렬을 푸리에 변환(FT)해 유클리디안 공간으로 변환시킨 행렬과 CNN의 필터의 행렬과 element-wise 곱을 통해 CNN 수행한다.
+    - 합성곱 된 그래프 결과값을 푸리에 역변환(IFT)를 통해 Non-Euclidean공간으로 다시 바꾼다.
+  2. CNN의 필터 행렬 변환
+    - CNN 필터 행렬을 parameter화 하여 체비셰프 다항식을 이용해 행렬 분해
+    - 이는 푸리에 급수 행렬이 필요 없기 때문에 계산량이 큰 고유값 분해를 사용할 수 없다.
+    - 그래서 계산복잡도가 훨씬 낮아진다.
 
