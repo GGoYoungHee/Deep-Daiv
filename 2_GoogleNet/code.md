@@ -19,7 +19,7 @@ GoogleNet이 우승했던 챌린지인 ILSVRC 2014 Classification Challenge 데�
     Ex) 실제 데이터 내 이미지
     
 
-![https://storage.googleapis.com/tfds-data/visualization/fig/stl10-1.0.0.png](https://storage.googleapis.com/tfds-data/visualization/fig/stl10-1.0.0.png)
+![img_code](code.png)
 
 이하 코드는 다음의 자료를 참고
 
