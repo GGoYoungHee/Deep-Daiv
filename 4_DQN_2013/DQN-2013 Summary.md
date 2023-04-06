@@ -1,4 +1,4 @@
-# DQN-2013 Summary (Korean)
+# DQN-2013 Summary
 
 먼저, Atari 란, 미국의 비디오 게임 회사입니다.
 
