@@ -1,6 +1,6 @@
 
 # CharCNN for Text Classification
-- 논문명: Xiang Zhang, Junbo Zhao, & Yann LeCun. (2016). Character-level Convolutional Networks for Text Classification.
+- 논문명: Xiang Zhang, Junbo Zhao, & Yann LeCun. "Character-level Convolutional Networks for Text Classification". (2016).
 
 
 - 아쉬운점은 pytorch로 구현하지 않고 keras로 구현했다는 점!
