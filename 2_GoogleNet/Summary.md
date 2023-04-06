@@ -62,7 +62,7 @@ LeNet-5를 시작으로 **CNN은 일반적인 표준 구조**를 가지게 되�
          [https://m.blog.naver.com/laonple/222504298493](https://m.blog.naver.com/laonple/222504298493)
         
         - MLP Convolutional Layer
-            ![img2](./Fig/fig2.png)
+            ![img__1](./Fig/fig__1.png)
             
             NIN 연구진들은, 일반적인 CNN 구조의 convolutional layer가 local receptive field에서 어떤 특징을 추출해내는 능력은 우수하지만, 여기에 사용하는 핕터가 선형적(linear)이기 때문에, 비선형적(non-linear)인 특징을 추출해내는 데는 어려움이 있으며, 이 부분을 극복하기 위해 feature-map의 수를 늘려야 한다는 점에 주목했다. 필터의 수를 늘리면 연산량이 늘어나는 문제가 있다.
             
@@ -72,7 +72,7 @@ LeNet-5를 시작으로 **CNN은 일반적인 표준 구조**를 가지게 되�
             
             Network in Network에서 이용하였던 **CCCP** (Cascaded Cross Channel Pooling)라는 기법이 있다. 이는 하나의 feature map에 대하여 수행하는 일반적인 pooling 기법과는 달리 **channel을 직렬로 묶어 픽셀 별로 pooling을 수행**하는 것인데, 이러한 CCCP 연산의 특징은 **feature map의 크기는 그대로이고, channel의 수만 줄어들게 하여 차원 축소의 효과**를 가져온다.
             
-            ![img3](./Fig/fig3.png)
+            ![img__2](./Fig/fig__2.png)
             
             그런데 이 **CCCP 기법은 1 x 1 Convolutional layer과 그 연산 방식 및 효과가 매우 유사**하다. 따라서 GoogLeNet에서 1 x 1 Convolutional layer를 Inception module에 적용한 것이다.
             
@@ -86,14 +86,14 @@ LeNet-5를 시작으로 **CNN은 일반적인 표준 구조**를 가지게 되�
                 2. 연산량 감소(Efficient)
                 3. 비선형성(Non-linearity)
                     
-                 ![img4](./Fig/fig4.png)
+                 ![img__3](./Fig/fig__3.png)
                     
         
     
 
 # **4. Motivation and High Level Considerations**
 
-![img1.daumcdn.png](GoogleNet%20Summary%20(Korean)%20e82ae25140034748b6356e972f7ce196/img1.daumcdn%204.png)
+![img2](./Fig/fig2.png)
 
 GoogLeNet이 나오게 된 배경에 대해서 설명한다.
 
@@ -113,13 +113,12 @@ GoogLeNet이 나오게 된 배경에 대해서 설명한다.
 
 이러한 상황에서 컴퓨팅 자원은 한정적이므로 네트워크의 크기를 늘리는 것보다 컴퓨팅 자원을 효율적으로 분배하는 것이 더욱 중요하다.
 
-![왼쪽은 Sparse한 네트워크이고, 오른쪽은 Dense한 네트워크이다](GoogleNet%20Summary%20(Korean)%20e82ae25140034748b6356e972f7ce196/img1.daumcdn%205.png)
-
-왼쪽은 Sparse한 네트워크이고, 오른쪽은 Dense한 네트워크이다
+![img3](./Fig/fig3.png)
+- 왼쪽은 Sparse한 네트워크이고, 오른쪽은 Dense한 네트워크이다
 
 위의 두가지 문제를 모두 해결하기 위한 근본적인 방법은 convolutional layer내부의 fully connected를 sparsely connected 구조로 바꾸는 것이다. 따라서 가장 이상적인 네트워크 구조는 출력의 상관관계를 분석하고 highly correlated된 출력끼리 모은다음 층별로 설계하는 것이다.
 
-![img1.daumcdn.png](GoogleNet%20Summary%20(Korean)%20e82ae25140034748b6356e972f7ce196/img1.daumcdn%206.png)
+![img4](./Fig/fig4.png)
 
 하지만 컴퓨터는 사각이 아닌 sparse matrix계산을 효율적으로 수행하지 못한다. vision 분야의 머신러닝 시스템들은 convolutuion을 이용해서 spatial domain에서는 sparsity를 이용하는듯 하지만, convolution자체가 dense connections의 모음으로 구현된다.
 
@@ -143,7 +142,7 @@ Inception 구조는 어떻게 filter-level과 같은 단계에서 sparsely conne
 
 이때, 이전 layer의 각 유닛이 입력 이미지의 특정 부분에 해당된다고 가정하였는데, 입력 이미지와 가까운 낮은 layer에서는 특정 부분에 Correlated unit들이 집중되어 있다. 이는 단일 지역에 많은 클러스터들이 집중된다는 뜻이기에 1 x 1 Convolution으로 처리할 수 있다.
 
-![맨 오른쪽의 원형 모양은 필터가 더 커야 연관된 유닛을 더욱 많이 뽑아낼 수 있다.](GoogleNet%20Summary%20(Korean)%20e82ae25140034748b6356e972f7ce196/img1.daumcdn%207.png)
+![img5](./Fig/fig5.png)
 
 맨 오른쪽의 원형 모양은 필터가 더 커야 연관된 유닛을 더욱 많이 뽑아낼 수 있다.
 
@@ -156,7 +155,7 @@ Inception 구조는 어떻게 filter-level과 같은 단계에서 sparsely conne
 [https://brunch.co.kr/@coolmindory/37](https://brunch.co.kr/@coolmindory/37)
 > 
 
-![img1.daumcdn.jpg](GoogleNet%20Summary%20(Korean)%20e82ae25140034748b6356e972f7ce196/img1.daumcdn.jpg)
+![img6](./Fig/fig6.png)
 
 1 x 1, 3 x 3, 5 x 5 Convolutional filter의 수는 망이 깊어짐에 따라 달라지는데, 만약 위 그림처럼 높은 layer에서만 포착될 수 있는 높은 추상적 개념의 특징이 있다면, 공간적 집중도가 감소하게 되어, 네트워크가 깊어짐에 따라 3 x 3과 5 x 5 Convolutional filter의 수도 늘어나야 한다.
 
@@ -164,7 +163,7 @@ Inception 구조는 어떻게 filter-level과 같은 단계에서 sparsely conne
 
 3 x 3 Convolutional filter 뿐만 아니라, 5 x 5 Convolutional filter도 사용할 경우, 연산량이 많아지는데 입력 feature map의 크기가 크거나 5 x 5 Convolutional filter의 수가 많아지면 **연산량은 더욱 증가하게 된다.**
 
-![연산량 문제를 해결하기 위해 왼쪽 모델에서 1 x 1 Convolution layer를 추가하였다](GoogleNet%20Summary%20(Korean)%20e82ae25140034748b6356e972f7ce196/img1.daumcdn%208.png)
+![img7](./Fig/fig7.png)
 
 연산량 문제를 해결하기 위해 왼쪽 모델에서 1 x 1 Convolution layer를 추가하였다
 
@@ -184,7 +183,7 @@ Inception 구조는 어떻게 filter-level과 같은 단계에서 sparsely conne
 
 이제 Inception module이 적용된 전체 GoogLeNet의 구조에 대해서 알아본다.
 
-![그림5.jpg](GoogleNet%20Summary%20(Korean)%20e82ae25140034748b6356e972f7ce196/%EA%B7%B8%EB%A6%BC5.jpg)
+![img8](./Fig/fig8.png)
 
 먼저, GoogLeNet이라는 이름은 LeNet으로부터 유래하였으며, 이는 Inception 구조의 성체라고 한다.
 
