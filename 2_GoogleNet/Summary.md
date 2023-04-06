@@ -1,4 +1,4 @@
-# GoogleNet Summary (Korean)
+# GoogleNet Summary
 
 # 0. 논문 선정 이유
 
