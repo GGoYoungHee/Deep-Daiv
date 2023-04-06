@@ -2,17 +2,17 @@
 
 먼저, Atari 란, 미국의 비디오 게임 회사입니다.
 
-![img0](/Fig/fig0.png)
+![img0](./Fig/fig0.png)
 
 그리고 본 논문에서는 Atari회사의 게임을 사용해 강화학습을 적용하였습니다. 대표적인 Atari 게임 종류에는 다음과 같은 익숙한 고전 게임들이 많습니다.
 
-![img1](/Fig/fig1.png)
+![img1](./Fig/fig1.png)
 
-![Untitled](DQN-2013%20Summary%20(Korean)%20f9ce6687b9ed4b739aa0fe6fd7a29b5e/Untitled%202.png)
+![img2](./Fig/fig2.png)
 
 다양한 Atari게임 중, 본 논문에서 사용된 게임의 예시는 다음과 같습니다.
 
-![Untitled](DQN-2013%20Summary%20(Korean)%20f9ce6687b9ed4b739aa0fe6fd7a29b5e/Untitled%203.png)
+![img3](./Fig/fig3.png)
 
 ## Abstract
 
@@ -63,7 +63,7 @@ CNN의 가중치를 업데이트하기 위해 확률적 경사하강법과 함�
 - 입력이미지를 바탕으로 어떤 행동($a_t$)을 통해 보상($r_t$)를 받고 상태(s)를 갱신합니다.
 - 현재의 행동이 미래에 영향을 받으므로 행동시퀀스 $s_t= x_1, a_1, x_2, a_2, ... , a_{t-1}, x_t$를 통해 학습을 진행하며 미래 보상을 최대화 하는 행동을 선택하도록 학습합니다.
 
-![Untitled](DQN-2013%20Summary%20(Korean)%20f9ce6687b9ed4b739aa0fe6fd7a29b5e/Untitled%204.png)
+![img4](./Fig/fig4.png)
 
 - 시간 t에서 Discount Factor($\gamma$) 가 적용된 보상($r_t$)는 다음과 같습니다.
     
@@ -76,13 +76,13 @@ CNN의 가중치를 업데이트하기 위해 확률적 경사하강법과 함�
 - **Bellman Equation**에 따라, 모든 가능한 a’에 대해 다음 시간 스텝에서 최적의 $Q^*(s,a)$ 를 안다면, 최적 전략은 $r+\gamma * Q^*(s,a)$를 최대화하는 것입니다.
     - Bellman Equation (with derivation)
         
-        ![Untitled](DQN-2013%20Summary%20(Korean)%20f9ce6687b9ed4b739aa0fe6fd7a29b5e/Untitled%205.png)
+        ![img5](./Fig/fig5.png)
         
         → 여기서, 다음스텝에서의 최적의 $Q^*(s,a)$는 마지막 식의 $Q(s_{t+1}, a_{t+1})$이라고 생각하면 됩니다!
         
 - 따라서, RL은 i가 무한대로 근사함에 따라, $Q_i$를 $Q^*$에 근사시키는 Optimal 전략을 사용합니다.
     
-    ![Untitled](DQN-2013%20Summary%20(Korean)%20f9ce6687b9ed4b739aa0fe6fd7a29b5e/Untitled%206.png)
+    ![img6](./Fig/fig6.png)
     
 
 - 하지만! 이러한 Action Value function은 각 시퀀스에 대해 독립적으로 추정됩니다. (비현실적)
@@ -92,12 +92,12 @@ CNN의 가중치를 업데이트하기 위해 확률적 경사하강법과 함�
     
 - $\theta$를 학습시키기 위해 i번째 iteration에서 loss function을 정의하여 $\theta$가 수렴할 때 까지 반복합니다.
     
-    ![Untitled](DQN-2013%20Summary%20(Korean)%20f9ce6687b9ed4b739aa0fe6fd7a29b5e/Untitled%207.png)
+    ![img7](./Fig/fig7.png)
     
     - 이때, $y_i$는 iteration의 타겟값입니다. → 앞서 정의한 $Q^*(s,a)$가 됩니다!
 - 결과적으로 얻게되는 Gradient는 다음과 같습니다.
     
-    ![Untitled](DQN-2013%20Summary%20(Korean)%20f9ce6687b9ed4b739aa0fe6fd7a29b5e/Untitled%208.png)
+    ![img8](./Fig/fig8.png)
     
 
 ## Related Work
@@ -130,7 +130,7 @@ experience replay로 학습하기 위해서는 현재의 파라미터와 sample�
 
 **<Deep Q-Learning with Experience Replay’s Algorithm>**
 
-![Untitled](DQN-2013%20Summary%20(Korean)%20f9ce6687b9ed4b739aa0fe6fd7a29b5e/Untitled%209.png)
+![img9](./Fig/fig9.png)
 
 1) 변수 초기화
 
@@ -156,7 +156,7 @@ experience replay로 학습하기 위해서는 현재의 파라미터와 sample�
 
 1) Preprocessing
 
-![Untitled](DQN-2013%20Summary%20(Korean)%20f9ce6687b9ed4b739aa0fe6fd7a29b5e/Untitled%2010.png)
+![img10](./Fig/fig10.png)
 
 - Atari 게임의 이미지 크기 : 210*160
 - 210*160 → 110*84로 줄임 / gray-scale로 변경(채널 수 3 →1)
@@ -164,7 +164,7 @@ experience replay로 학습하기 위해서는 현재의 파라미터와 sample�
 
 2) Model Architecture(DQN)
 
-![Untitled](DQN-2013%20Summary%20(Korean)%20f9ce6687b9ed4b739aa0fe6fd7a29b5e/Untitled%2011.png)
+![img11](./Fig/fig11.png)
 
 - DQN은 state representation만을 network의 input으로 사용함
 - output은 input state에 대한 개별 action의 예측한 Q-value에 해당함
@@ -188,7 +188,7 @@ Agent가 모든 Frame을 보고 Action을 취하는 것이 아니라 K번째 프
 
 **Training and Stability**
 
-![Untitled](DQN-2013%20Summary%20(Korean)%20f9ce6687b9ed4b739aa0fe6fd7a29b5e/Untitled%2012.png)
+![img12](./Fig/fig12.png)
 
 - 10,000 step 동안 $\epsilon=0.05$을 적용하여 계산된 value
 - 1 epoch는 50,000 minibatch의 weight 업데이터 혹은 약 30분의 학습 시간을 의미
@@ -196,11 +196,11 @@ Agent가 모든 Frame을 보고 Action을 취하는 것이 아니라 K번째 프
 
 **Visualizing the Value Function**
 
-![Untitled](DQN-2013%20Summary%20(Korean)%20f9ce6687b9ed4b739aa0fe6fd7a29b5e/Untitled%2013.png)
+![img13](./Fig/fig13.png)
 
 **Main Evaluation**
 
-![Untitled](DQN-2013%20Summary%20(Korean)%20f9ce6687b9ed4b739aa0fe6fd7a29b5e/Untitled%2014.png)
+![img14](./Fig/fig14.png)
 
 ## Conclusion
 
