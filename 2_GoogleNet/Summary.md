@@ -31,7 +31,7 @@ CNN에 대해 좀 더 깊게 공부해보고 싶어서 GoogleNet을 선정했습
     
     R-CNN은 Image classification을 수행하는 CNN과 localization을 위한 regional proposal알고리즘을 연결한 모델이다.
     참고) [https://ganghee-lee.tistory.com/35](https://ganghee-lee.tistory.com/35)
-    ![img2](./Fig/fig2.png)
+    ![img3_1](./Fig/fig3_1.png)
     
 
   Mobile 및 Embedded 환경에서는 특히 전력 및 메모리 사용량 관점에서 효율적인 알고리즘의 중요성이 대두되고 있기에, 이 논문에서는 모델이 **엄격한 고정된 구조를 가지는 것보다 유연한 구조를 가지게끔** 하였다. 또한 **추론 시간에 1.5 billion 이하의 연산만을 수행하도록 설계**하여, 단순히 학술적인 호기심에 끝나는 것이 아니라 현실에서도 적절히 사용되게끔 설계하였다.
@@ -62,7 +62,7 @@ LeNet-5를 시작으로 **CNN은 일반적인 표준 구조**를 가지게 되�
          [https://m.blog.naver.com/laonple/222504298493](https://m.blog.naver.com/laonple/222504298493)
         
         - MLP Convolutional Layer
-            ![img3](./Fig/fig3.png)
+            ![img2](./Fig/fig2.png)
             
             NIN 연구진들은, 일반적인 CNN 구조의 convolutional layer가 local receptive field에서 어떤 특징을 추출해내는 능력은 우수하지만, 여기에 사용하는 핕터가 선형적(linear)이기 때문에, 비선형적(non-linear)인 특징을 추출해내는 데는 어려움이 있으며, 이 부분을 극복하기 위해 feature-map의 수를 늘려야 한다는 점에 주목했다. 필터의 수를 늘리면 연산량이 늘어나는 문제가 있다.
             
@@ -72,7 +72,7 @@ LeNet-5를 시작으로 **CNN은 일반적인 표준 구조**를 가지게 되�
             
             Network in Network에서 이용하였던 **CCCP** (Cascaded Cross Channel Pooling)라는 기법이 있다. 이는 하나의 feature map에 대하여 수행하는 일반적인 pooling 기법과는 달리 **channel을 직렬로 묶어 픽셀 별로 pooling을 수행**하는 것인데, 이러한 CCCP 연산의 특징은 **feature map의 크기는 그대로이고, channel의 수만 줄어들게 하여 차원 축소의 효과**를 가져온다.
             
-            ![img4](./Fig/fig4.png)
+            ![img3](./Fig/fig3.png)
             
             그런데 이 **CCCP 기법은 1 x 1 Convolutional layer과 그 연산 방식 및 효과가 매우 유사**하다. 따라서 GoogLeNet에서 1 x 1 Convolutional layer를 Inception module에 적용한 것이다.
             
@@ -86,7 +86,7 @@ LeNet-5를 시작으로 **CNN은 일반적인 표준 구조**를 가지게 되�
                 2. 연산량 감소(Efficient)
                 3. 비선형성(Non-linearity)
                     
-                 ![img5](./Fig/fig5.png)
+                 ![img4](./Fig/fig4.png)
                     
         
     
