@@ -1,10 +1,10 @@
-# GNNExplainer Summary (Korean)
+# GNNExplainer Summary
 
 # Introduction
 
 GNN의 가장 큰 장점은 “관계성”이다. Non-relational Data, 즉 우리가 일반적으로 하는 데이터들은 각 데이터가 Independent 하다는 가정을 가지고 있다. 하지만 Social Network, Chemical Data등 관계가 중요한 요소로 자리매김 하는 Relation data는 이전의 데이터와 차이가 있기에 Relation data는 다른 기법을 사용해 분석해야한다. GNN은 바로 이 관계성을 담을 수 있는 기법이고 사회, 정보, 화학 그리고 생명 도메인 등 현대 세계의 데이터를 잘 분석할 수 있는 데이터이다.
 
-![Untitled](GNNExplainer%20Summary%20(Korean)%201d11fbee60294e09a978e9b08a7be54b/Untitled.png)
+![img0](./Fig/fig0.png)
 
 위 그림으로 GNN XAI에 대한 overview를 볼 수 있다. 먼저 input graph의 하나의 노드 embedding을 도출하고 classification을 하는 모델이 있다면, 해당 노드를 특정 class로 분류함에 있어 영향을 미친 노드들, 즉 subgraph를 찾는 것이 GNN XAI의 목적이다.
 
@@ -20,7 +20,7 @@ Explainability 기법 종류 : 기존의 ML/DL에서 사용했던 방식 정리 
 
 - 인접행렬 (Adjacency Matrix)
     
-    ![Untitled](GNNExplainer%20Summary%20(Korean)%201d11fbee60294e09a978e9b08a7be54b/Untitled%201.png)
+    ![img1](./Fig/fig1.png)
     
 
 ### GNN Explainer
@@ -33,13 +33,13 @@ GNN Explainer는 GNN의 예측을 설명하기 위한 기법. 훈련된 GNN과 P
 
 ### 예시] basketball과 sailing 그래프에서 노드 분류
 
-![Untitled](GNNExplainer%20Summary%20(Korean)%201d11fbee60294e09a978e9b08a7be54b/Untitled%202.png)
+![img2](./Fig/fig2.png)
 
 각 노드는 학생, label은 취미운동에 대한 그래프를 나타낸다. $\Phi$는 Node Classification을 진행하는 GNN Model이라고 했을 때, $v_i, v_j$노드가 어떤 운동을 선택할 것인지 판단하는 문제로 정의할 수 있다. 빨간색 모델이 $v_i$를 농구라고 분류하고 초록색 모델이 $v_j$를 sailing이라고 분류하는 경우이다. 훈련된 모델과 Prediction이 존재할 때, GNN Explainer는 각 노드가 판단을 하기 위한 요소들이 무엇인지 판단해 우측의 그림처럼 subgraph를 나타낸 것으로 볼 수 있다. 
 
 # Formulating explanations for graph neural networks
 
-![Untitled](GNNExplainer%20Summary%20(Korean)%201d11fbee60294e09a978e9b08a7be54b/Untitled%203.png)
+![img3](./Fig/fig3.png)
 
 GNN기법으로 Node $v$의 Embedding $z$를 판단하고자 한다.
 
@@ -64,7 +64,7 @@ GNN기법으로 Node $v$의 Embedding $z$를 판단하고자 한다.
 
 최적화를 위해 단일노드 v에 대해 Computation Graph $G_c$ 내 포함되어 있는 Subgraph $G_s$ 중, Mutual Information이 가장 큰 $G_s$를 선택한다.
 
-![Untitled](GNNExplainer%20Summary%20(Korean)%201d11fbee60294e09a978e9b08a7be54b/Untitled%204.png)
+![img4](./Fig/fig4.png)
 
 노드 $v_i$의 Embedding을 구성하여 라벨을 정의하기 위해 모델에서 사용하는 모든 노드들을 $G_c$라고 했을 때, 전부를 활용하는 것도 가능하지만, 그 중 필요한 노드와 불필요한 노드는 존재하고, 불필요한 노드는 결과를 저해할 수 있다. 따라서 핵심적인 노드만을 판단하기 위해 $G_c$내에 존재하는 여러 경우의 $G_s$를 구해 구 중 Mutual Information이 최대인 $G_s$를 구하는 것이다. 위의 그림에서 $G_c$에서 $G_s$후보들을 나타내는 것을 볼 수 있다. Mutual Information(MI)에 대한 식은 다음과 같은 식으로 표현한다.
 
@@ -117,7 +117,7 @@ $\max_{G_s,F} MI(Y,(G_s,F)) = H(Y) - H(Y|G=G_s, X=X_s^F)$이 식은 가장 처�
 
 ### Synthetic dataset
 
-![Untitled](GNNExplainer%20Summary%20(Korean)%201d11fbee60294e09a978e9b08a7be54b/Untitled%205.png)
+![img5](./Fig/fig5.png)
 
 - BA-shapes
     - 300개의 노드를 가진 Barabasi-Albert(BA) Graph에서 5개씩 80개 노드로 구성된 House꼴의 Motifs를 랜덤하게 선택된 노드에 연결한다.
@@ -177,7 +177,7 @@ $\max_{G_s,F} MI(Y,(G_s,F)) = H(Y) - H(Y|G=G_s, X=X_s^F)$이 식은 가장 처�
 
 **1) Quantitative Analyses**
 
-![Untitled](GNNExplainer%20Summary%20(Korean)%201d11fbee60294e09a978e9b08a7be54b/Untitled%206.png)
+![img6](./Fig/fig6.png)
 
 Node Classification Dataset에 대한 Accuracy를 위의 표에서 확인할 수 있다. 
 
@@ -188,11 +188,11 @@ Node Classification Dataset에 대한 Accuracy를 위의 표에서 확인할 수
 
 **2) Qialitative Analyses**
 
-![Untitled](GNNExplainer%20Summary%20(Korean)%201d11fbee60294e09a978e9b08a7be54b/Untitled%207.png)
+![img7](./Fig/fig7.png)
 
-![Untitled](GNNExplainer%20Summary%20(Korean)%201d11fbee60294e09a978e9b08a7be54b/Untitled%208.png)
+![img8](./Fig/fig8.png)
 
-![Untitled](GNNExplainer%20Summary%20(Korean)%201d11fbee60294e09a978e9b08a7be54b/Untitled%209.png)
+![img9](./Fig/fig9.png)
 
 - 위 세개의 그림을 통해 GNN Explainer이 가장 Ground Truth의 그래프 형태와 비슷하다는 것을 질적 연구로 파악할 수 있다.
 
