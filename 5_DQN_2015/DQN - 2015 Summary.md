@@ -1,8 +1,8 @@
-# DQN - 2015 Summary (Korean)
+# DQN - 2015 Summary
 
-![RL-chapter1-1-1.jpg](DQN%20-%202015%20Summary%20(Korean)%20b6e8101a92be46888abca8b6c426b955/RL-chapter1-1-1.jpg)
+![img00](./Fig/fig00.jpg)
 
-![RL-chapter1-1-2.jpg](DQN%20-%202015%20Summary%20(Korean)%20b6e8101a92be46888abca8b6c426b955/RL-chapter1-1-2.jpg)
+![img01](./Fig/fig01.jpg)
 
 # Introduction
 
@@ -43,7 +43,7 @@ $Q^*(s,a) = max_\pi E[r_t + \gamma r_{t+1}+ \gamma^2 r_{t+2}+ ... | s_t=s, a_t=a
     
     2) Action-value function $Q$ 와 target values $r + \gamma * max_{a'} Q(s',a')$ 사이의 상관관계 : 즉, target value가 Q함수에 대해 의존적이다. 아래 loss 식을 통해 자기 자신이 target 됨으로써 학습이 매우 불안정적이게 된다.
     
-    ![Untitled](DQN%20-%202015%20Summary%20(Korean)%20b6e8101a92be46888abca8b6c426b955/Untitled.png)
+    ![img0](./Fig/fig0.png)
     
 
 ### Solutions
@@ -80,18 +80,18 @@ $L_i(\theta_i) = E_{(s,a,r,s')\sim U(D)} [(r+\gamma * max_{a'}Q(s',a';\theta_i^-
 
 ### Algorithm
 
-![Untitled](DQN%20-%202015%20Summary%20(Korean)%20b6e8101a92be46888abca8b6c426b955/Untitled%201.png)
+![img1](./Fig/fig1.png)
 
 - 이전 포스팅 (Playing Atari with Deep Reinforcement learning 논문, 2013)과 비슷한 듯 싶지만, 가장 큰 차이는 target value에 있습니다.
 - 2013년의 DQN은 target value를 상수 취급을 하여 강화학습을 진행하였지만, 2015년에 새로 publish된 DQN은 target value를 네트워크로 구성해 performance를 향상시켰습니다.
 - 2013 DQN Algorithm
     
-    ![Untitled](DQN%20-%202015%20Summary%20(Korean)%20b6e8101a92be46888abca8b6c426b955/Untitled%202.png)
+    ![img2](./Fig/fig2.png)
     
 
 ### Architecture
 
-![Untitled](DQN%20-%202015%20Summary%20(Korean)%20b6e8101a92be46888abca8b6c426b955/Untitled%203.png)
+![img3](./Fig/fig3.png)
 
 - input : 84*84*4 (by preprocessing map $\emptyset$ )
     - preprocessing
@@ -128,16 +128,16 @@ Behaviour policy는 epsilon-greedy 방식이다. epsilon값은 1.0으로 시작�
 
 ### Result 1
 
-![Untitled](DQN%20-%202015%20Summary%20(Korean)%20b6e8101a92be46888abca8b6c426b955/Untitled%204.png)
+![img4](./Fig/fig4.png)
 
 - 다른 게임들을 다른 방법으로 train한 결과 (space invaders, seaquest)
 
-![Untitled](DQN%20-%202015%20Summary%20(Korean)%20b6e8101a92be46888abca8b6c426b955/Untitled%205.png)
+![img5](./Fig/fig5.png)
 
 > <Space invaders>
 > 
 
-![Untitled](DQN%20-%202015%20Summary%20(Korean)%20b6e8101a92be46888abca8b6c426b955/Untitled%206.png)
+![img6](./Fig/fig6.png)
 
 > <Seaquest>
 > 
@@ -150,7 +150,7 @@ Behaviour policy는 epsilon-greedy 방식이다. epsilon값은 1.0으로 시작�
 
 ### Result 2
 
-![Untitled](DQN%20-%202015%20Summary%20(Korean)%20b6e8101a92be46888abca8b6c426b955/Untitled%207.png)
+![img7](./Fig/fig7.png)
 
 - 49개의 게임에 DQN으로 학습 시킨 결과
 - 75% 게임에서 인간의 퍼포먼스와 같거다 높다.
