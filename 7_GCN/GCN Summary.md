@@ -1,4 +1,4 @@
-# GCN Summary (Korean)
+# GCN Summary
 
 - 선형대수와 관련한 지식을 가지고 있으면 이해하기 더욱 수월하실 것 같습니다!
 - 논문을 읽다보니 너무 어려워서 이해하는 만큼만 포스팅을 하였습니다!
@@ -15,10 +15,10 @@
     
     (GNNExplainer 2번째 포스팅에 달린 코멘트 중, 레드님께서 하신 코멘트 중, “먼 미래에는 뇌과학 분야에 GNN과 Explainer를 도입해 기억이 저장되는 원리에 대한 연구가 진행될지도 모르겠네요.”라는 말이 있었는데, 어쩌면 먼 미래가 아니라, 생각보다 가까운 미래 혹은 이미 진행중인 연구일지도 모르겠다는 생각이 들었습니다...!)
     
-    ![Untitled](GCN%20Summary%20(Korean)%204b0c512360414568bd684169af3a528f/Untitled.png)
+    ![img0](./Fig/fig0.png)
     
 
-![Untitled](GCN%20Summary%20(Korean)%204b0c512360414568bd684169af3a528f/Untitled%201.png)
+![img1](./Fig/fig1.png)
 
 저차원 & 규칙적인 grid(Euclidean Domains)에서 그래프(특히, Non-Euclidean domain)로 CNN을 일반화할 때 발생가능한 문제는 Localization 문제입니다. 하지만 본 논문에서는 이를 해결하면서 계산복잡도까지 감소시켜 효율적인 방법을 제시합니다.
 
@@ -26,7 +26,7 @@
     
     이미지 안에 물체들이 어디에 있는지를 찾아내는 문제. 물체가 있는 곳에 bounding box를 그리는 방식으로 표시합니다.
     
-    ![Untitled](GCN%20Summary%20(Korean)%204b0c512360414568bd684169af3a528f/Untitled%202.png)
+    ![img2](./Fig/fig2.png)
     
 
 # Proposed Technique
@@ -35,21 +35,21 @@
 
 즉, non-euclidean input(Spatial domain) → Fourier domain  → element-wise multiplication → inverse Fourier transform (Spatial domain) → Convolved signal
 
-![Untitled](GCN%20Summary%20(Korean)%204b0c512360414568bd684169af3a528f/Untitled%203.png)
+![img3](./Fig/fig3.png)
 
 - 여기서 FT는 푸리에 변환을 의미하며, IFT는 역변환된 푸리에 변환을 의미합니다.
 - 푸리에 변환 (Fourier Transform)
     
     직관적으로 설명하자면, 임의의 입력 신호를 다양한 주파수를 갖는 주기함수들의 합으로 분해하여 표현하는 것입니다.  
     
-    ![Untitled](GCN%20Summary%20(Korean)%204b0c512360414568bd684169af3a528f/Untitled%204.png)
+    ![img4](./Fig/fig4.png)
     
     위 그림에서, 맨 앞의 붉은색 신호는 입력신호이고, 뒤의 파란색 신호들은 푸리에 변환을 통해 얻어진 주기함수 성분들입니다. 주기함수들을 모두 합치면 붉은 색의 원본 신호가 됩니다. 자세한 수식 내용은 뒤에 이어서 설명하겠습니다.
     
 
 ### Graph Fourier Transform
 
-![Untitled](GCN%20Summary%20(Korean)%204b0c512360414568bd684169af3a528f/Untitled%205.png)
+![img5](./Fig/fig5.png)
 
 그래프의 푸리에 분석에서 사용되는 중요한 연산자는 Laplacian 연산입니다. (앞선 포스팅, GCN 기초편에서 라플라시안 연산에 대해 자세히 나와있습니다.) Laplacian 연산을 보면, n크기를 갖는 V벡터(노드)와 엣지E를 갖는  $G=(V,E)$로 구성된 그래프에서 라플라시안은 다음과 같이 정의됩니다.
 
@@ -67,11 +67,11 @@ $\Delta = D-A$
     
     *그림 1* 
     
-    ![Untitled](GCN%20Summary%20(Korean)%204b0c512360414568bd684169af3a528f/Untitled%206.png)
+    ![img6](./Fig/fig6.png)
     
     *그림 2*
     
-    ![Untitled](GCN%20Summary%20(Korean)%204b0c512360414568bd684169af3a528f/Untitled%207.png)
+    ![img7](./Fig/fig7.png)
     
     그림 1에는 빨간색 벡터, 파란색 벡터, 분홍색 벡터가 있습니다. 그리고, 그림 2는 그림1을 선형변환한 figure입니다. 빨간색 벡터는 선형변환 전(그림1)에서와 선형 변환 후(그림2)에서의 방향이 바뀌어서 고유벡터가 될 수 없습니다. 하지만 파란색과 분홍색 벡터는 선형변환 전과 후 모두 같은 방향을 가지고 있고 크기만 변화하였습니다. 따라서, 파란색 벡터와 분홍색 벡터는 각각 고유벡터(eigen-vector)라고 하며, 벡터의 크기변화는 고유값(eigen-value)라고 합니다. 
     
@@ -124,7 +124,7 @@ non-Euclidean domain에서 합성곱을 정의하는 2가지 스텝이 있습니
 
 (그래프를 다양한 수학적 계산을 통해 지지고 볶고 하는 것이 너무 계산량 많으니까 그냥 **필터를 근사시켜서 계산하자!**라고 이해했습니다...)
 
-![Untitled](GCN%20Summary%20(Korean)%204b0c512360414568bd684169af3a528f/Untitled%208.png)
+![img8](./Fig/fig8.png)
 
 즉, 우리는 필터를 모수화 시켜 $g_\theta(\Lambda)$라고 쓸 수 있습니다. 단, $\Theta \in \mathbb{R}^K$는 다항식 계수 벡터입니다.
 
@@ -142,7 +142,7 @@ $g_\theta (\tilde{\Delta}) = \Phi g(\Lambda)\Phi^T = \sum_{k=0}^K\theta_k T_k(\t
 
 그래프에서 풀링 연산은 비슷한 노드를 그룹핑하고 각 그룹에서 몇개의 노드만을 유지하면서 진행됩니다. 이것을 여러번 반복하는 것은 그래프 구조를 유지하면서 multi-scaling clustering하는 것과 동일합니다. 
 
-![Untitled](GCN%20Summary%20(Korean)%204b0c512360414568bd684169af3a528f/Untitled%209.png)
+![img9](./Fig/fig9.png)
 
 *figure 2. Example of Graph Coarsening and Pooling*
 
@@ -167,9 +167,9 @@ pooling 시 노드는 singleton(빨강), fake(파랑), regular(초록)노드로 
 
 # Experiments
 
-![Untitled](GCN%20Summary%20(Korean)%204b0c512360414568bd684169af3a528f/Untitled%2010.png)
+![img10](./Fig/fig10.png)
 
-![Untitled](GCN%20Summary%20(Korean)%204b0c512360414568bd684169af3a528f/Untitled%2011.png)
+![img11](./Fig/fig11.png)
 
 # Conclusion
 
