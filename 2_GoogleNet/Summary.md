@@ -1,9 +1,3 @@
----
-layout: post
-title: "Notion으로 글 작성하고 Github io로 글 옮기기"
-background: 
----
-
 # GoogleNet Summary (Korean)
 
 # 0. 논문 선정 이유
