@@ -19,7 +19,7 @@ GoogleNet이 우승했던 챌린지인 ILSVRC 2014 Classification Challenge 데�
     Ex) 실제 데이터 내 이미지
     
 
-![img_code](code.png)
+![img_code](.Fig/code.png)
 
 이하 코드는 다음의 자료를 참고
 
