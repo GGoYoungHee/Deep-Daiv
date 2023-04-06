@@ -2,11 +2,11 @@
 
 먼저, Atari 란, 미국의 비디오 게임 회사입니다.
 
-![img0](./Fig/fig0)
+![img0](/Fig/fig0.png)
 
 그리고 본 논문에서는 Atari회사의 게임을 사용해 강화학습을 적용하였습니다. 대표적인 Atari 게임 종류에는 다음과 같은 익숙한 고전 게임들이 많습니다.
 
-![img1](./Fig/fig1)
+![img1](/Fig/fig1.png)
 
 ![Untitled](DQN-2013%20Summary%20(Korean)%20f9ce6687b9ed4b739aa0fe6fd7a29b5e/Untitled%202.png)
 
